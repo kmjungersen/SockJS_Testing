@@ -65,3 +65,4 @@
 2014-05-30 15:09:36-0400 [MyChat,7,127.0.0.1] Lost a client!
 2014-05-30 15:09:51-0400 [twisted.internet.protocol.ServerFactory] Got new client!
 2014-05-30 15:10:06-0400 [MyChat,8,127.0.0.1] Lost a client!
+2014-05-30 16:12:26-0400 [MyChat,6,127.0.0.1] Lost a client!
