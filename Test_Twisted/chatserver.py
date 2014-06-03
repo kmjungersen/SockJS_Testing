@@ -1,12 +1,21 @@
 """The most basic chat protocol possible.
-
+<<<<VOIDED>>>>
 run me with twistd -y chatserver.py, and then connect with multiple
 telnet clients to port 1025
+<<<<VOIDED>>>>
+
+
+RUNS ON PORT 1025
 """
 
 from twisted.protocols import basic
 
+import tornado.web
 
+class IndexHandler(tornado.web.RequestHandler):
+    """ Serve the chat html page """
+    def get(self):
+        self.render('index.html')
 
 class MyChat(basic.LineReceiver):
     def connectionMade(self):
