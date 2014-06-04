@@ -43,4 +43,4 @@ factory.protocol = MyChat
 factory.clients = []
 
 application = service.Application("chatserver")
-internet.TCPServer(1025, factory).setServiceParent(application)
+internet.TCPServer(5000, factory).setServiceParent(application)
