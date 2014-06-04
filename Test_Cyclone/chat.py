@@ -1,6 +1,6 @@
 import sys
 
-import cyclone
+import cyclone.web
 
 from twisted.internet import reactor
 from twisted.python import log
