@@ -4,10 +4,6 @@ import benchmark
 
 import websocket
 
-from tornado import web, ioloop, websocket
-from sockjs.tornado import SockJSConnection, SockJSRouter
-import sockjs.tornado
-
 import sys
 import cyclone.web
 from twisted.internet import reactor
@@ -46,10 +42,3 @@ class SockJS_SpeedTests(benchmark.Benchmark):
 
 
         return ""
-
-
-class TornadoEchoConnection(SockJSConnection):
-    participants = set()
-
-    def on_message(self, msg):
-        self.send(msg)

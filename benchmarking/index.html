@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Benchmarking</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+        <script src="http://cdn.sockjs.org/sockjs-0.3.min.js"></script>
+
+        <script>
+            //console.log('hello');
+
+            $(document).ready(function() {
+//                function log(info) {
+//                    console.log(info);
+//                }
+                console.log('hello again!');
+
+                var Tor_Sock = new SockJS('http://127.0.0.1:1234');
+
+                Tor_Sock.onopen = function() {
+                    console.log('opened sock');
+                };
+
+                console.log('herrrooooo');
+
+                if (Tor_Sock.CLOSED == true) {
+                    console.log('yes it\'s open');
+                }
+
+                //Tor_Sock.send('hello world!');
+
+                });     //document.ready
+
+
+        </script>
+</head>
+<body>
+
+</body>
+</html>
