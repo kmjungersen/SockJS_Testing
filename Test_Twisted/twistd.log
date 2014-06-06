@@ -890,3 +890,80 @@
 2014-06-04 17:46:58-0400 [MyChat,25,127.0.0.1] Lost a client!
 2014-06-04 17:47:18-0400 [MyChat,27,127.0.0.1] Lost a client!
 2014-06-04 18:01:20-0400 [MyChat,26,127.0.0.1] Lost a client!
+2014-06-06 10:24:21-0400 [twisted.internet.protocol.ServerFactory] Got new client!
+2014-06-06 10:24:21-0400 [MyChat,28,127.0.0.1] received 'GET / HTTP/1.1'
+2014-06-06 10:24:21-0400 [MyChat,28,127.0.0.1] received 'Host: localhost:5000'
+2014-06-06 10:24:21-0400 [MyChat,28,127.0.0.1] received 'Connection: keep-alive'
+2014-06-06 10:24:21-0400 [MyChat,28,127.0.0.1] received 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+2014-06-06 10:24:21-0400 [MyChat,28,127.0.0.1] received 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.114 Safari/537.36'
+2014-06-06 10:24:21-0400 [MyChat,28,127.0.0.1] received 'Accept-Encoding: gzip,deflate,sdch'
+2014-06-06 10:24:21-0400 [MyChat,28,127.0.0.1] received 'Accept-Language: en-US,en;q=0.8'
+2014-06-06 10:24:21-0400 [MyChat,28,127.0.0.1] received 'Cookie: sessionid=agp9td7mfvhtiyz9yok3vy29lgbrgzda; csrftoken=xGuGAXPui71XdSJY1N134nEIvETM71lc'
+2014-06-06 10:24:21-0400 [MyChat,28,127.0.0.1] received ''
+2014-06-06 10:29:21-0400 [MyChat,28,127.0.0.1] Lost a client!
+2014-06-06 10:30:40-0400 [twisted.internet.protocol.ServerFactory] Got new client!
+2014-06-06 10:30:40-0400 [MyChat,29,127.0.0.1] received 'GET / HTTP/1.1'
+2014-06-06 10:30:40-0400 [MyChat,29,127.0.0.1] received 'Host: localhost:5000'
+2014-06-06 10:30:40-0400 [MyChat,29,127.0.0.1] received 'Connection: keep-alive'
+2014-06-06 10:30:40-0400 [MyChat,29,127.0.0.1] received 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+2014-06-06 10:30:40-0400 [MyChat,29,127.0.0.1] received 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.114 Safari/537.36'
+2014-06-06 10:30:40-0400 [MyChat,29,127.0.0.1] received 'Accept-Encoding: gzip,deflate,sdch'
+2014-06-06 10:30:40-0400 [MyChat,29,127.0.0.1] received 'Accept-Language: en-US,en;q=0.8'
+2014-06-06 10:30:40-0400 [MyChat,29,127.0.0.1] received 'Cookie: sessionid=agp9td7mfvhtiyz9yok3vy29lgbrgzda; csrftoken=xGuGAXPui71XdSJY1N134nEIvETM71lc'
+2014-06-06 10:30:40-0400 [MyChat,29,127.0.0.1] received ''
+2014-06-06 10:35:42-0400 [MyChat,29,127.0.0.1] Lost a client!
+2014-06-06 10:56:10-0400 [twisted.internet.protocol.ServerFactory] Got new client!
+2014-06-06 10:56:10-0400 [MyChat,30,127.0.0.1] received 'GET / HTTP/1.1'
+2014-06-06 10:56:10-0400 [MyChat,30,127.0.0.1] received 'Host: localhost:5000'
+2014-06-06 10:56:10-0400 [MyChat,30,127.0.0.1] received 'Connection: keep-alive'
+2014-06-06 10:56:10-0400 [MyChat,30,127.0.0.1] received 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+2014-06-06 10:56:10-0400 [MyChat,30,127.0.0.1] received 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.114 Safari/537.36'
+2014-06-06 10:56:10-0400 [MyChat,30,127.0.0.1] received 'Accept-Encoding: gzip,deflate,sdch'
+2014-06-06 10:56:10-0400 [MyChat,30,127.0.0.1] received 'Accept-Language: en-US,en;q=0.8'
+2014-06-06 10:56:10-0400 [MyChat,30,127.0.0.1] received 'Cookie: sessionid=agp9td7mfvhtiyz9yok3vy29lgbrgzda; csrftoken=xGuGAXPui71XdSJY1N134nEIvETM71lc'
+2014-06-06 10:56:10-0400 [MyChat,30,127.0.0.1] received ''
+2014-06-06 11:00:35-0400 [MyChat,30,127.0.0.1] Lost a client!
+2014-06-06 11:00:59-0400 [twisted.internet.protocol.ServerFactory] Got new client!
+2014-06-06 11:00:59-0400 [MyChat,31,127.0.0.1] received 'GET / HTTP/1.1'
+2014-06-06 11:00:59-0400 [MyChat,31,127.0.0.1] received 'Host: localhost:5000'
+2014-06-06 11:00:59-0400 [MyChat,31,127.0.0.1] received 'Connection: keep-alive'
+2014-06-06 11:00:59-0400 [MyChat,31,127.0.0.1] received 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+2014-06-06 11:00:59-0400 [MyChat,31,127.0.0.1] received 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.114 Safari/537.36'
+2014-06-06 11:00:59-0400 [MyChat,31,127.0.0.1] received 'Accept-Encoding: gzip,deflate,sdch'
+2014-06-06 11:00:59-0400 [MyChat,31,127.0.0.1] received 'Accept-Language: en-US,en;q=0.8'
+2014-06-06 11:00:59-0400 [MyChat,31,127.0.0.1] received 'Cookie: sessionid=agp9td7mfvhtiyz9yok3vy29lgbrgzda; csrftoken=xGuGAXPui71XdSJY1N134nEIvETM71lc'
+2014-06-06 11:00:59-0400 [MyChat,31,127.0.0.1] received ''
+2014-06-06 11:01:01-0400 [MyChat,31,127.0.0.1] Lost a client!
+2014-06-06 11:07:04-0400 [twisted.internet.protocol.ServerFactory] Got new client!
+2014-06-06 11:07:04-0400 [MyChat,32,127.0.0.1] received 'GET / HTTP/1.1'
+2014-06-06 11:07:04-0400 [MyChat,32,127.0.0.1] received 'Host: localhost:5000'
+2014-06-06 11:07:04-0400 [MyChat,32,127.0.0.1] received 'Connection: keep-alive'
+2014-06-06 11:07:04-0400 [MyChat,32,127.0.0.1] received 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+2014-06-06 11:07:04-0400 [MyChat,32,127.0.0.1] received 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.114 Safari/537.36'
+2014-06-06 11:07:04-0400 [MyChat,32,127.0.0.1] received 'Accept-Encoding: gzip,deflate,sdch'
+2014-06-06 11:07:04-0400 [MyChat,32,127.0.0.1] received 'Accept-Language: en-US,en;q=0.8'
+2014-06-06 11:07:04-0400 [MyChat,32,127.0.0.1] received 'Cookie: sessionid=agp9td7mfvhtiyz9yok3vy29lgbrgzda; csrftoken=xGuGAXPui71XdSJY1N134nEIvETM71lc'
+2014-06-06 11:07:04-0400 [MyChat,32,127.0.0.1] received ''
+2014-06-06 11:07:06-0400 [MyChat,32,127.0.0.1] Lost a client!
+2014-06-06 11:15:53-0400 [twisted.internet.protocol.ServerFactory] Got new client!
+2014-06-06 11:15:53-0400 [MyChat,33,127.0.0.1] received 'GET / HTTP/1.1'
+2014-06-06 11:15:53-0400 [MyChat,33,127.0.0.1] received 'Host: localhost:5000'
+2014-06-06 11:15:53-0400 [MyChat,33,127.0.0.1] received 'Connection: keep-alive'
+2014-06-06 11:15:53-0400 [MyChat,33,127.0.0.1] received 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+2014-06-06 11:15:53-0400 [MyChat,33,127.0.0.1] received 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.114 Safari/537.36'
+2014-06-06 11:15:53-0400 [MyChat,33,127.0.0.1] received 'Accept-Encoding: gzip,deflate,sdch'
+2014-06-06 11:15:53-0400 [MyChat,33,127.0.0.1] received 'Accept-Language: en-US,en;q=0.8'
+2014-06-06 11:15:53-0400 [MyChat,33,127.0.0.1] received 'Cookie: sessionid=agp9td7mfvhtiyz9yok3vy29lgbrgzda; csrftoken=xGuGAXPui71XdSJY1N134nEIvETM71lc'
+2014-06-06 11:15:53-0400 [MyChat,33,127.0.0.1] received ''
+2014-06-06 11:15:56-0400 [MyChat,33,127.0.0.1] Lost a client!
+2014-06-06 11:54:13-0400 [twisted.internet.protocol.ServerFactory] Got new client!
+2014-06-06 11:54:13-0400 [MyChat,34,127.0.0.1] received 'GET / HTTP/1.1'
+2014-06-06 11:54:13-0400 [MyChat,34,127.0.0.1] received 'Host: localhost:5000'
+2014-06-06 11:54:13-0400 [MyChat,34,127.0.0.1] received 'Connection: keep-alive'
+2014-06-06 11:54:13-0400 [MyChat,34,127.0.0.1] received 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+2014-06-06 11:54:13-0400 [MyChat,34,127.0.0.1] received 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.114 Safari/537.36'
+2014-06-06 11:54:13-0400 [MyChat,34,127.0.0.1] received 'Accept-Encoding: gzip,deflate,sdch'
+2014-06-06 11:54:13-0400 [MyChat,34,127.0.0.1] received 'Accept-Language: en-US,en;q=0.8'
+2014-06-06 11:54:13-0400 [MyChat,34,127.0.0.1] received 'Cookie: sessionid=agp9td7mfvhtiyz9yok3vy29lgbrgzda; csrftoken=xGuGAXPui71XdSJY1N134nEIvETM71lc'
+2014-06-06 11:54:13-0400 [MyChat,34,127.0.0.1] received ''
+2014-06-06 11:59:13-0400 [MyChat,34,127.0.0.1] Lost a client!

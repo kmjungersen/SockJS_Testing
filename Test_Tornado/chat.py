@@ -29,6 +29,7 @@ class ChatConnection(sockjs.tornado.SockJSConnection):
     def on_message(self, message):
         # Broadcast message
         self.broadcast(self.participants, message)
+        print message
 
     def on_close(self):
         # Remove client from the clients list and broadcast leave message
