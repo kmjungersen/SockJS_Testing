@@ -2,11 +2,10 @@
 <html>
     <head>
         <title>Benchmarking</title>
-        <script src="jquery.js"></script>
-        <script src="sockjs.js"></script>
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script src="http://cdn.sockjs.org/sockjs-0.3.min.js"></script>
 
         <script>
-            //console.log('hello');
             $(function() {
 
                 console.log('Welcome to Benchmarking!');
@@ -14,15 +13,16 @@
                 var Tor_Sock = null;
 
                 function connect() {
-                    var Tor_Sock = new SockJS('http://127.0.0.1:8020/chat');
+                    Tor_Sock = new SockJS('http://127.0.0.1:8020');
 
                     Tor_Sock.onopen = function() {
                         console.log('opened sock');
-                        Tor_Sock.send('heyyyyyy');
+                        Tor_Sock.send('This is a message!');
                     };
 
                     Tor_Sock.onmessage = function(e) {
-                        console.log('message: ' + e.data);
+                        Tor_Sock.send('Returning Message!')
+
                     };
 
                     Tor_Sock.onclose = function() {
@@ -34,7 +34,7 @@
 
                 function disconnect() {
                     console.log('disconnecting....');
-                    Tor_Sock .close();
+                    Tor_Sock.close();
                 }
 
                 connect();

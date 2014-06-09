@@ -4,6 +4,8 @@ from Benchmark_Twisted import ServerSetup as TwistedMain
 
 #TornadoMain(8000)
 
-#CycloneMain(8010)
-
 TwistedMain(8020)
+
+CycloneMain(8010)
+
+

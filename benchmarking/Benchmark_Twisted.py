@@ -3,7 +3,6 @@ from twisted.internet import reactor
 from txsockjs.factory import SockJSFactory
 from txsockjs.utils import broadcast
 
-import webbrowser
 import time
 import os
 
@@ -20,7 +19,6 @@ class TwistedChatConnection(Protocol):
             self.factory.transports = set()
         self.factory.transports.add(self.transport)
         self.MessageStartTime = time.time()
-        print 'connection made'
 
     def dataReceived(self, data):
         broadcast(data, self.factory.transports)
@@ -40,16 +38,13 @@ class TwistedChatConnection(Protocol):
         self.Summary += '=========================================\n'
 
         print self.Summary
-        #self.factory.transports.remove(self.transports)
-        print 'connection lost'
-
 
 def ServerSetup(port):
     f = SockJSFactory(Factory.forProtocol(TwistedChatConnection))
 
     reactor.listenTCP(port, f)
-    os.system('open Static/index_Twisted.html')
 
-
+    os.system('open /Users/kurtisjungersen/COS/NotificationCenterFiles/'
+              'SockJS_Testing/benchmarking/Static/index_Twisted.html')
 
     reactor.run()

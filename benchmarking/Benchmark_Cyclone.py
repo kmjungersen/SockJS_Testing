@@ -1,14 +1,9 @@
-import sys
-import time
-import webbrowser
-
 import cyclone.web
-
 from twisted.internet import reactor
-from twisted.python import log
 
 import sockjs.cyclone
-
+import time
+import webbrowser
 
 class CycloneIndexHandler(cyclone.web.RequestHandler):
     """ Serve the chat html page """
@@ -20,7 +15,7 @@ class CycloneChatConnection(sockjs.cyclone.SockJSConnection):
     """ Chat sockjs connection """
     participants = set()
     MessageCount = 0
-    MessageTarget = 10000
+    MessageTarget = 100
     MessageStartTime = 0
     MessageStopTime = 0
     Summary = ''
@@ -52,7 +47,7 @@ class CycloneChatConnection(sockjs.cyclone.SockJSConnection):
         print self.Summary
 
         self.participants.remove(self)
-        reactor.stop()
+        #reactor.stop()
 
 
 
@@ -67,4 +62,4 @@ def ServerSetup(port):
     webbrowser.open_new_tab(address)
     reactor.run()
 
-#ServerSetup()
+ServerSetup(8010)

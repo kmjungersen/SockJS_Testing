@@ -21,7 +21,7 @@ class TornadoChatConnection(sockjs.tornado.SockJSConnection):
     # Class level variable
     participants = set()
     MessageCount = 0
-    MessageTarget = 10000
+    MessageTarget = 100
     MessageStartTime = 0
     MessageStopTime = 0
     Summary = ''
@@ -63,9 +63,6 @@ class TornadoChatConnection(sockjs.tornado.SockJSConnection):
 
 
 def ServerSetup(port):
-
-    import logging
-    logging.getLogger().setLevel(logging.DEBUG)
 
     # 1. Create chat router
     TornadoRouter = sockjs.tornado.SockJSRouter(TornadoChatConnection, '/chat')
