@@ -14,7 +14,7 @@
                 var Tor_Sock = null;
 
                 function connect() {
-                    var Tor_Sock = new SockJS('http://' + window.location.host + '/chat');
+                    var Tor_Sock = new SockJS('http://127.0.0.1:8020/chat');
 
                     Tor_Sock.onopen = function() {
                         console.log('opened sock');

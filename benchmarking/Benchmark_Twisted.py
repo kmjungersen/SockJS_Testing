@@ -48,7 +48,7 @@ def ServerSetup(port):
     f = SockJSFactory(Factory.forProtocol(TwistedChatConnection))
 
     reactor.listenTCP(port, f)
-    os.system('open /Users/kurtisjungersen/COS/NotificationCenterFiles/SockJS_Testing/benchmarking/Static/index.html')
+    os.system('open Static/index_Twisted.html')
 
 
 
