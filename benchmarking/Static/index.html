@@ -28,6 +28,8 @@
                     Tor_Sock.onclose = function() {
                         console.log('disconnected.');
                         Tor_Sock = null;
+                        window.close();
+
                     };
 
                 }   //connect

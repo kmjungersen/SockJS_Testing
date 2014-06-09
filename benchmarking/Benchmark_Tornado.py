@@ -21,7 +21,7 @@ class TornadoChatConnection(sockjs.tornado.SockJSConnection):
     # Class level variable
     participants = set()
     MessageCount = 0
-    MessageTarget = 100
+    MessageTarget = 10000
     MessageStartTime = 0
     MessageStopTime = 0
     Summary = ''
@@ -85,4 +85,4 @@ def ServerSetup(port):
     #return TornadoChatConnection.Summary
 
 #if __name__ == '__main__':
-    #ServerSetup()
+#ServerSetup(8000)

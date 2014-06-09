@@ -18,12 +18,20 @@ class CycloneChatConnection(sockjs.cyclone.SockJSConnection):
     MessageTarget = 100
     MessageStartTime = 0
     MessageStopTime = 0
+    SetupStopTime = 0
+    TeardownStartTime = 0
     Summary = ''
 
     def connectionMade(self, info):
+        with open('SetupStopTime.txt', 'w') as SetupStopFile:
+            self.SetupStopTime = time.time()
+            SetupStopFile.writelines(self.SetupStopTime)
 
         self.participants.add(self)
-        self.MessageStartTime = time.time()
+
+        with open('MessageStartTime.txt', 'w') as MessageStartFile:
+            self.MessageStartTime = time.time()
+            MessageStartFile.writelines(self.MessageStartTime)
 
 
     def messageReceived(self, message):
@@ -34,25 +42,31 @@ class CycloneChatConnection(sockjs.cyclone.SockJSConnection):
             self.close()
 
     def connectionLost(self):
-        self.MessageStopTime = time.time()
 
-        self.Summary += '=========================================\n'
-        self.Summary += 'CYCLONE SUMMARY\n'
-        self.Summary += str(self.MessageCount)
-        self.Summary += ' total messages were sent/received in '
-        self.Summary += str(self.MessageStopTime - self.MessageStartTime)
-        self.Summary += ' seconds.\n'
-        self.Summary += '=========================================\n'
+        with open('MessageStopTime.txt', 'w') as MessageStopFile:
+            self.MessageStopTime = time.time()
+            MessageStopFile.writelines(self.MessageStopTime)
 
-        print self.Summary
+        # self.Summary += '=========================================\n'
+        # self.Summary += 'CYCLONE SUMMARY\n'
+        # self.Summary += str(self.MessageCount)
+        # self.Summary += ' total messages were sent/received in '
+        # self.Summary += str(self.MessageStopTime - self.MessageStartTime)
+        # self.Summary += ' seconds.\n'
+        # self.Summary += '=========================================\n'
+
+        with open('TeardownStartTime.txt', 'w') as TeardownStartFile:
+            self.TeardownStartTime = time.time()
+            TeardownStartFile.writelines(self.TeardownStartTime)
+
+        #print self.Summary
 
         self.participants.remove(self)
-        #reactor.stop()
-
+        reactor.stop()
 
 
 def ServerSetup(port):
-    #log.startLogging(sys.stdout)
+
     CycloneRouter = sockjs.cyclone.SockJSRouter(CycloneChatConnection, '/chat')
 
     app = cyclone.web.Application( [ (r"/", CycloneIndexHandler) ] +
@@ -62,4 +76,4 @@ def ServerSetup(port):
     webbrowser.open_new_tab(address)
     reactor.run()
 
-ServerSetup(8010)
+#ServerSetup(8010)

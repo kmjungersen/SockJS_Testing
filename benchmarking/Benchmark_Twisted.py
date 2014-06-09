@@ -1,6 +1,6 @@
 from twisted.internet.protocol import Factory, Protocol
 from twisted.internet import reactor
-from txsockjs.factory import SockJSFactory
+from txsockjs.factory import SockJSFactory, SockJSMultiFactory
 from txsockjs.utils import broadcast
 
 import time
@@ -9,7 +9,7 @@ import os
 
 class TwistedChatConnection(Protocol):
     MessageCount = 0
-    MessageTarget = 100
+    MessageTarget = 10000
     MessageStartTime = 0
     MessageStopTime = 0
     Summary = ''
@@ -48,3 +48,5 @@ def ServerSetup(port):
               'SockJS_Testing/benchmarking/Static/index_Twisted.html')
 
     reactor.run()
+
+#ServerSetup(8020)
