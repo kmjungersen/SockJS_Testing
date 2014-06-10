@@ -1,29 +1,33 @@
 from invoke import run
 import time
-from numpy import *
+from numpy import array, average
+import shutil
+import os
+IterationNumber = 10
 
-IterationNumber = 1
 
+shutil.rmtree('Data/')
+os.mkdir('Data/')
 
-SetupStartFile = open('SetupStartTime.txt', 'rw')
-TeardownStopFile = open('TeardownStopTime.txt', 'rw')
+SetupStartFile = open('Data/SetupStartTime.txt', 'a+')
+TeardownStopFile = open('Data/TeardownStopTime.txt', 'a+')
 
 #===================================================
 for x in range(0, IterationNumber):
 
     SetupStartTime = time.time()
-    SetupStartFile.writelines(SetupStartTime)
-    run('python ../Benchmark_Cyclone.py')
+    SetupStartFile.write(str(SetupStartTime) + '\n')
+    run('python Benchmark_Cyclone.py')
 
     TeardownStopTime = time.time()
-    TeardownStopFile.writelines(TeardownStopTime)
+    TeardownStopFile.write(str(TeardownStopTime) + '\n')
 
 #===================================================
 
-SetupStopFile = open('SetupStopTime.txt', 'r')
-MessageStartFile = open('MessageStartTime.txt', 'r')
-MessageStopFile = open('MessageStopTime.txt', 'r')
-TeardownStartFile = open('TeardownStartTime', 'r')
+SetupStopFile = open('Data/SetupStopTime.txt', 'r')
+MessageStartFile = open('Data/MessageStartTime.txt', 'r')
+MessageStopFile = open('Data/MessageStopTime.txt', 'r')
+TeardownStartFile = open('Data/TeardownStartTime.txt', 'r')
 
 s_start = []
 s_stop = []
@@ -32,25 +36,36 @@ m_stop = []
 t_start = []
 t_stop = []
 
+SetupStartFile.seek(0)
+TeardownStopFile.seek(0)
+
 for y in range(0, IterationNumber):
-    s_start.append(SetupStartFile.readline())
-    s_stop.append(SetupStopFile.readline())
+    s_start.append(float(SetupStartFile.readline()))
+    s_stop.append(float(SetupStopFile.readline()))
 
-    m_start.append(MessageStartFile.readline())
-    m_stop.append(MessageStopFile.readline())
+    m_start.append(float(MessageStartFile.readline()))
+    m_stop.append(float(MessageStopFile.readline()))
 
-    t_start.append(TeardownStartFile.readline())
-    t_stop.append(TeardownStopFile.readline())
+    t_start.append(float(TeardownStartFile.readline()))
 
-s_start = array(s_start)
-s_stop = array[s_stop]
-m_start = array[m_start]
-m_stop = array[m_stop]
-t_start = array[t_start]
-t_stop = array[t_stop]
+    t_stop.append(float(TeardownStopFile.readline()))
 
-s_dif = (s_stop - s_start)
-m_dif = (m_stop - m_start)
-t_dif = (t_stop - t_start)
+s_start_2 = array(s_start)
+s_stop_2 = array(s_stop)
+m_start = array(m_start)
+m_stop = array(m_stop)
+t_start = array(t_start)
+t_stop = array(t_stop)
 
-s_dif
+s_diff = s_stop_2 - s_start_2
+m_diff = (m_stop - m_start)
+t_diff = (t_stop - t_start)
+
+s_avg = average(s_diff)
+m_avg = average(m_diff)
+t_avg = average(t_diff)
+
+
+print s_avg
+print m_avg
+print t_avg

@@ -15,7 +15,7 @@ class CycloneChatConnection(sockjs.cyclone.SockJSConnection):
     """ Chat sockjs connection """
     participants = set()
     MessageCount = 0
-    MessageTarget = 100
+    MessageTarget = 10
     MessageStartTime = 0
     MessageStopTime = 0
     SetupStopTime = 0
@@ -23,15 +23,15 @@ class CycloneChatConnection(sockjs.cyclone.SockJSConnection):
     Summary = ''
 
     def connectionMade(self, info):
-        with open('SetupStopTime.txt', 'w') as SetupStopFile:
+        with open('Data/SetupStopTime.txt', 'a+') as SetupStopFile:
             self.SetupStopTime = time.time()
-            SetupStopFile.writelines(self.SetupStopTime)
+            SetupStopFile.write(str(self.SetupStopTime) + '\n')
 
         self.participants.add(self)
 
-        with open('MessageStartTime.txt', 'w') as MessageStartFile:
+        with open('Data/MessageStartTime.txt', 'a+') as MessageStartFile:
             self.MessageStartTime = time.time()
-            MessageStartFile.writelines(self.MessageStartTime)
+            MessageStartFile.write(str(self.MessageStartTime) + '\n')
 
 
     def messageReceived(self, message):
@@ -43,9 +43,9 @@ class CycloneChatConnection(sockjs.cyclone.SockJSConnection):
 
     def connectionLost(self):
 
-        with open('MessageStopTime.txt', 'w') as MessageStopFile:
+        with open('Data/MessageStopTime.txt', 'a+') as MessageStopFile:
             self.MessageStopTime = time.time()
-            MessageStopFile.writelines(self.MessageStopTime)
+            MessageStopFile.write(str(self.MessageStopTime) + '\n')
 
         # self.Summary += '=========================================\n'
         # self.Summary += 'CYCLONE SUMMARY\n'
@@ -55,9 +55,9 @@ class CycloneChatConnection(sockjs.cyclone.SockJSConnection):
         # self.Summary += ' seconds.\n'
         # self.Summary += '=========================================\n'
 
-        with open('TeardownStartTime.txt', 'w') as TeardownStartFile:
+        with open('Data/TeardownStartTime.txt', 'a+') as TeardownStartFile:
             self.TeardownStartTime = time.time()
-            TeardownStartFile.writelines(self.TeardownStartTime)
+            TeardownStartFile.write(str(self.TeardownStartTime) + '\n')
 
         #print self.Summary
 
@@ -76,4 +76,4 @@ def ServerSetup(port):
     webbrowser.open_new_tab(address)
     reactor.run()
 
-#ServerSetup(8010)
+ServerSetup(8010)
