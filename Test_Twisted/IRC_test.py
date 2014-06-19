@@ -57,7 +57,7 @@ class MessageLogger:
 class LogBot(irc.IRCClient):
     """A logging IRC bot."""
     
-    nickname = "twistedbot"
+    nickname = "C3PO"
     
     def connectionMade(self):
         irc.IRCClient.connectionMade(self)
@@ -70,7 +70,6 @@ class LogBot(irc.IRCClient):
         self.logger.log("[disconnected at %s]" % 
                         time.asctime(time.localtime(time.time())))
         self.logger.close()
-
 
     # callbacks for events
 
@@ -93,23 +92,16 @@ class LogBot(irc.IRCClient):
             self.msg(user, msg)
             return
 
-        # elif self.nickname in channel:
-        #     msg = 'what is UP???'
-        #     self.msg(user, msg)
-        #     return
-
         # Otherwise check to see if it is a message directed at me
-        if msg.startswith(self.nickname + ":"):
-            # msg = "%s: I am a log bot" % user
-            channel = user
-            msg = 'what is UP???'
+        if msg.startswith(self.nickname + ":") or \
+                          self.nickname in msg:
+            msg = "%s: I am a log bot" % user
             self.msg(channel, msg)
-            return
+            self.logger.log("<%s> %s" % (self.nickname, msg))
+
+    def messaging(self):
 
 
-            # #channel.open(user)
-            # self.msg(user, msg)
-            # self.logger.log("<%s> %s" % (self.nickname, msg))
 
     def action(self, user, channel, msg):
         """This will get called when the bot sees someone do an action."""
@@ -132,7 +124,7 @@ class LogBot(irc.IRCClient):
         Generate an altered version of a nickname that caused a collision in an
         effort to create an unused related name for subsequent registration.
         """
-        return nickname + '^'
+        return nickname + '_'
 
 
 
@@ -158,6 +150,10 @@ class LogBotFactory(protocol.ClientFactory):
     def clientConnectionFailed(self, connector, reason):
         print "connection failed:", reason
         reactor.stop()
+
+def PrintMessage(user, msg):
+
+    print '<{}> {}'.format(user, msg)
 
 
 if __name__ == '__main__':

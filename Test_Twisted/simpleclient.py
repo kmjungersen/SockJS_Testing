@@ -23,7 +23,7 @@ class EchoClient(protocol.Protocol):
         print "Server said:", data
         self.transport.loseConnection()
     
-    def connectionLost(self, reason):
+    def connectionLost(self, reason=''):
         print "connection lost"
 
 class EchoFactory(protocol.ClientFactory):
